@@ -20,6 +20,7 @@ class AppTheme {
       type: BottomNavigationBarType.fixed,
     ),
     textTheme: const TextTheme(
+
       labelSmall: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w500,
@@ -32,6 +33,11 @@ class AppTheme {
           fontSize: 24,
           fontWeight: FontWeight.w500,
           color: ColorsManager.black),
+      bodyLarge: TextStyle(
+          color: ColorsManager.white,
+          fontWeight: FontWeight.bold,
+          fontSize: 36
+      )
     ),
   );
 }
