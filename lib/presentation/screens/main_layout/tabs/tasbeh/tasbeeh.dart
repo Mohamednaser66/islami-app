@@ -32,28 +32,30 @@ class _TasbehState extends State<Tasbeh> {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge
             ),
-            Stack(
-              clipBehavior:Clip.none ,
-              alignment: Alignment.topCenter,
-              children: [
-                Image.asset(AssetsManager.sebhaHead,height: size.height*0.1,),
-                Positioned(
-                  top: size.height*0.085,
-                    child: Transform.rotate(angle: angel,
-                        child: Image.asset(AssetsManager.sebhaBody,height: size.height*0.5,))),
-                Positioned(
-                  top: size.height*0.24,
-                  child: InkWell(
-                    onTap: (){onSebhaClicked();},
-                    child: Column(
-                      children: [
-                        Text(azkar[currentIndex%azkar.length],style: Theme.of(context).textTheme.bodyLarge,),
-                        Text('$counter',style: Theme.of(context).textTheme.bodyLarge,)
-                      ],
+            Expanded(
+              child: Stack(
+                clipBehavior:Clip.none ,
+                alignment: Alignment.topCenter,
+                children: [
+                  Image.asset(AssetsManager.sebhaHead,height: size.height*0.1,),
+                  Positioned(
+                    top: size.height*0.085,
+                      child: Transform.rotate(angle: angel,
+                          child: Image.asset(AssetsManager.sebhaBody,height: size.height*0.5,))),
+                  Positioned(
+                    top: size.height*0.24,
+                    child: InkWell(
+                      onTap: (){onSebhaClicked();},
+                      child: Column(
+                        children: [
+                          Text(azkar[currentIndex%azkar.length],style: Theme.of(context).textTheme.bodyLarge,),
+                          Text('$counter',style: Theme.of(context).textTheme.bodyLarge,)
+                        ],
+                      ),
                     ),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             )
           ],
         ),
