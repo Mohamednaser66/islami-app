@@ -27,4 +27,9 @@ class AssetsManager {
   static const String sebhaHead = "$base/sebha_head.png";
   static const String sebhaBg = "$base/sebha_bg.png";
   static const String sebhaBody = "$base/SebhaBody 1.png";
+  static const String radioBg = "$base/radio_bg.png";
+  static const String radioItem = "$base/radio_item.png";
+  static const String adanTime = "$base/adan_time.png";
+  static const String timeBg = "$base/time_bg.png";
+  static const String azkar = "$base/azkar.png";
 }
