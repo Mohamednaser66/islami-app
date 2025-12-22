@@ -1,8 +1,15 @@
-
-<img width="250" height="600" alt="Splash Screen" src="https://github.com/user-attachments/assets/3c5c46e0-0582-4d50-81f8-5be0d0a38139" />
-<img width="250" height="600" alt="Intro Screen" src="https://github.com/user-attachments/assets/3fc2e6bc-7445-49b6-87e1-28fe9f4cc840" />
-<img width="250" height="<img width="600" height="3728" alt="Intro Screen (2)" src="https://github.com/user-attachments/assets/66fc4937-5f05-4840-bac8-8c5e48e8ad24" />728" alt="Intro Screen (1)" src="https://github.com/user-attachments/assets/a9e54636-89b7-45f5-b1da-63f6be40cc0c" />
-<img width="250" height="600" alt="Home Screen (1)" src="https://github.com/user-attachments/assets/68476a6b-ac33-420d-8f19-f0822b612090" />
+<img width="200" height="500" alt="Splash Screen" src="https://github.com/user-attachments/assets/3c5c46e0-0582-4d50-81f8-5be0d0a38139" />
+<img width="200" height="500" alt="Intro Screen" src="https://github.com/user-attachments/assets/3fc2e6bc-7445-49b6-87e1-28fe9f4cc840" />
+<img width="200" height="<img width="500" height="3728" alt="Intro Screen (2)" src="https://github.com/user-attachments/assets/66fc4937-5f05-4840-bac8-8c5e48e8ad24" />
+<img width="200" height="500" alt="Intro Screen (2)" src="https://github.com/user-attachments/assets/556a9c97-9f30-4ea0-bee6-454860a8688f" />
+<img width="200" height="500" alt="Home Screen (1)" src="https://github.com/user-attachments/assets/68476a6b-ac33-420d-8f19-f0822b612090" />
+<img width="200" height="500" alt="Soura Details Screen" src="https://github.com/user-attachments/assets/f6097915-d161-4bd6-affc-98a7da651b8c" />
+<img width="200" height="500" alt="Home Screen" src="https://github.com/user-attachments/assets/767e48f5-35e0-486c-abcd-a4a2f4152b49" />
+<img width="200" height="500" alt="Home Screen" src="https://github.com/user-attachments/assets/13590bc3-bf2f-4e82-bc04-43fc110b87e5" />
+<img width="200" height="500" alt="Hadeth Screen" src="https://github.com/user-attachments/assets/03b43c00-dec7-4946-a64c-34624cdb631f" />
+<img width="200" height="500" alt="Sebha Screen" src="https://github.com/user-attachments/assets/2d9a1325-4b54-44b3-88a3-10014153107e" />
+<img width="200" height="500" alt="Radio Screen" src="https://github.com/user-attachments/assets/9c3548eb-ab69-4171-9fdd-a7b6e96adfdc" />
+<img width="200" height="500" alt="Time Screen" src="https://github.com/user-attachments/assets/0511c989-8e14-4e54-a7dd-9ae27e666e40" />
 
 
 # Islami App
