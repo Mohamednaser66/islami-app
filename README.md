@@ -12,8 +12,25 @@
 
 # Islami App
 
-A new Flutter project.
+"Islami" is a phone app made for Muslims. It helps you with your faith and makes practicing Islamic habits easier.
+This app was developed using the Flutter Framework,Islami is intended to be a lightweight yet useful Islamic companion app that helps users read the Qur’an,
+learn hadith, perform daily Dhikr, and enjoy Islamic audio content — all with a clean interface and flexibleThe,Prayer Times feature in the Islami app provides accurate daily prayer timings based on the user’s location, helping Muslims perform their prayers on time.
+# Features
 
+Main Pages:
+
+Quran – Open and read any Surah. 
+
+
+Hadeth – View available hadiths in a scrollable list. 
+
+
+Tasbeh – Tap to count Dhikr. 
+
+
+Radio – Play Islamic radio audio. 
+
+ Prayer Times -  Displays all daily prayer times.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
