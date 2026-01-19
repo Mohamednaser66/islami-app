@@ -2,8 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_c14_offline_sun/core/assets_manager.dart';
 import 'package:islami_c14_offline_sun/core/colors_manager.dart';
-import 'package:islami_c14_offline_sun/models/Date.dart';
+import 'package:islami_c14_offline_sun/data/models/Date.dart';
 import 'package:islami_c14_offline_sun/presentation/screens/main_layout/tabs/pray_times/widgets/time_item.dart';
+import 'package:islami_c14_offline_sun/provider/states.dart';
 import 'package:islami_c14_offline_sun/provider/time_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -14,10 +15,11 @@ class TimeContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<TimeViewModel>(
       builder: (context,provider,child) {
-        if(provider.isLoading){
+       var state= provider.state;
+        if(state is PrayTimeLoadingState){
           return Center(child:  CircularProgressIndicator(),);
-        }if(provider.errorMessage!=null){
-          return Text(provider.errorMessage!);
+        }if(state is PrayTimeErrorState){
+          return Text(state.message??'Failed Loading');
         }
         return Stack(
           children: [

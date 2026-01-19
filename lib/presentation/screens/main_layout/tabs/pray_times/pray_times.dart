@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c14_offline_sun/core/assets_manager.dart';
 import 'package:islami_c14_offline_sun/core/colors_manager.dart';
+import 'package:islami_c14_offline_sun/core/di/di.dart';
 import 'package:islami_c14_offline_sun/presentation/screens/main_layout/tabs/pray_times/widgets/azkar_list_view.dart';
 import 'package:islami_c14_offline_sun/presentation/screens/main_layout/tabs/pray_times/widgets/time_container.dart';
 import 'package:islami_c14_offline_sun/provider/time_view_model.dart';
@@ -22,7 +23,7 @@ class PrayTimes extends StatelessWidget {
       child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: ChangeNotifierProvider(create:  (context) => TimeViewModel()..getTimeResponse(),
+          child: ChangeNotifierProvider(create:  (context) => getIt<TimeViewModel>(),
             child: Consumer<TimeViewModel>(
               builder: (context,provider,child) {
                 return Column(

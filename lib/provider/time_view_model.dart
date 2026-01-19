@@ -1,30 +1,34 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:islami_c14_offline_sun/data/api_service.dart';
-import 'package:islami_c14_offline_sun/models/Pray_time_response.dart';
+import 'package:islami_c14_offline_sun/data/models/Pray_time_response.dart';
+import 'package:islami_c14_offline_sun/domain/use_case/use_case.dart';
+import 'package:islami_c14_offline_sun/provider/states.dart';
 
-
+@injectable
 class TimeViewModel extends ChangeNotifier{
-  bool isLoading =false;
-  String? errorMessage;
+UseCase _useCase;
+@factoryMethod
+TimeViewModel(this._useCase);
  PrayTimeResponse? responseData;
  get date => responseData?.data?.date;
  Map<String,dynamic>? get timing =>responseData?.data?.timings?.toJson();
+ PrayTimesState state =PrayTimeLoadingState();
+ emit(PrayTimesState newState){
+   state =newState;
+ }
  Future<void> getTimeResponse()async{
-    isLoading =true;
-    errorMessage=null;
-    try{
-   var response=await ApiService.getPrayTime();
-   responseData=response;
-   isLoading=false;
-      errorMessage=null;
+ var result =await _useCase.invokeGetTime();
+ result.fold((l) {
+   emit(PrayTimeErrorState(message: l.message));
+ }, (r) {
+   responseData =r;
+   emit(PrayTimeSuccessState(prayTime: r));
+ },);
 
-    }catch(e){
-      isLoading=false;
-      errorMessage =e.toString();
 
-    }
     notifyListeners();
   }
 }

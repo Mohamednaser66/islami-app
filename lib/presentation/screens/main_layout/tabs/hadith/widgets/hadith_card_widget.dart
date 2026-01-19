@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_c14_offline_sun/DM/dm.dart';
 import 'package:islami_c14_offline_sun/core/assets_manager.dart';
 import 'package:islami_c14_offline_sun/core/colors_manager.dart';
 import 'package:islami_c14_offline_sun/core/routes_manager/routes.dart';
+import 'package:islami_c14_offline_sun/provider/islami_view_model.dart';
+import 'package:provider/provider.dart';
 
 class HadithCardWidget extends StatefulWidget {
   final int index;
@@ -16,11 +19,21 @@ class HadithCardWidget extends StatefulWidget {
 class _HadithCardWidgetState extends State<HadithCardWidget> {
   HadithDM? hadith;
 
+
+ loadHadithFile()async{
+   var provider =Provider.of<IslamiViewModel>(context,listen: false);
+    await provider.loadHadithFile(widget.index);
+    setState(() {
+      hadith =provider.hadith;
+
+    });
+ }
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    loadHadithFile();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      loadHadithFile();
+    });
   }
 
   @override
@@ -91,22 +104,7 @@ class _HadithCardWidgetState extends State<HadithCardWidget> {
     );
   }
 
-  void loadHadithFile() async {
-    String key = "assets/files/hadith/h${widget.index}.txt";
-    var fileContent = await rootBundle.loadString(key);
-    int startLine = 0;
-    int endLine = fileContent.indexOf('\n');
-    String title = fileContent.substring(startLine, endLine);
-    String content = fileContent.substring(endLine + 1);
-    hadith = HadithDM(title: title, content: content);
-    await Future.delayed(Duration(milliseconds: 500));
-    setState(() {});
-  }
+
 }
 
-class HadithDM {
-  String title;
-  String content;
 
-  HadithDM({required this.title, required this.content});
-}

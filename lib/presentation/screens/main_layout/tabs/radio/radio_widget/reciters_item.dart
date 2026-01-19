@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c14_offline_sun/core/colors_manager.dart';
-import 'package:islami_c14_offline_sun/models/Reciters.dart';
+import 'package:islami_c14_offline_sun/data/models/Reciters.dart';
 
 class RecitersItem extends StatelessWidget {
   const RecitersItem({super.key,required this.reciter});

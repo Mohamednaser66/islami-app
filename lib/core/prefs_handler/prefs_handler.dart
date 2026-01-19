@@ -9,7 +9,6 @@ class PrefsHandler {
   }
 
   static void addSuraIndex(int suraIndex) async {
-    //final SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String> mostRecentSurasIndex =
         prefs.getStringList("most_recent_suras_index") ?? [];
     if (mostRecentSurasIndex.length >= 6) {

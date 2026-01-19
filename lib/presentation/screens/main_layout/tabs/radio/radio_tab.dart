@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c14_offline_sun/core/di/di.dart';
 import 'package:islami_c14_offline_sun/presentation/screens/main_layout/tabs/radio/radio_widget/radio_listview.dart';
 import 'package:islami_c14_offline_sun/presentation/screens/main_layout/tabs/radio/radio_widget/reciters_list_view.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +19,7 @@ class _RadioTabState extends State<RadioTab> {
   Widget build(BuildContext context) {
 var  size= MediaQuery.of(context).size;
     return ChangeNotifierProvider(
-      create:(context) => RadioViewModel(),
+      create:(context) => getIt<RadioViewModel>(),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Container(

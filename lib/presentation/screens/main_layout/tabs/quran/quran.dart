@@ -20,7 +20,6 @@ class _QuranState extends State<Quran> {
 
   @override
   Widget build(BuildContext context) {
-    print("Ana da5alt elbuild");
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
@@ -58,7 +57,6 @@ class _QuranState extends State<Quran> {
             suraDM.suraNameEn.toLowerCase().contains(searchKey.toLowerCase()) ||
             suraDM.suraNameAr.contains(searchKey))
         .toList();
-    print(filteredList.length);
   }
 
   Widget buildSurasList() {

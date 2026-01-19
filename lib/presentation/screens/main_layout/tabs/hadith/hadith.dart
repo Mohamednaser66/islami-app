@@ -23,15 +23,12 @@ class Hadith extends StatelessWidget {
                 options: CarouselOptions(
                   height: double.infinity,
                   enlargeCenterPage: true,
-                  autoPlay: true,
+                  autoPlay: false,
                   viewportFraction: 0.7,
                   aspectRatio: 1 / 1,
                 ),
-                items: List.generate(
-                  50,
-                  (index) => index + 1,
-                ).map(
-                  (index) {
+                items: List.generate(50, (index) => index + 1,
+                ).map((index) {
                     return HadithCardWidget(index: index);
                   },
                 ).toList(),

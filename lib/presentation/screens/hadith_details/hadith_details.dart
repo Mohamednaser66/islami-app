@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c14_offline_sun/DM/dm.dart';
 import 'package:islami_c14_offline_sun/core/assets_manager.dart';
 import 'package:islami_c14_offline_sun/core/colors_manager.dart';
 import 'package:islami_c14_offline_sun/presentation/screens/hadith_details/widgets/hadith_content.dart';
@@ -18,6 +19,7 @@ class _HadithDetailsState extends State<HadithDetails> {
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
+
     hadith = ModalRoute.of(context)?.settings.arguments as HadithDM;
   }
 

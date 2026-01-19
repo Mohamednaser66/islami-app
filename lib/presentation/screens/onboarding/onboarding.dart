@@ -28,7 +28,6 @@ class Onboarding extends StatelessWidget {
 
     titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
     bodyTextStyle: bodyStyle,
-    // bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
     pageColor: ColorsManager.black,
 
     imagePadding: EdgeInsets.only(top: 150, left: 16, right: 16),

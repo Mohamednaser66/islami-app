@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c14_offline_sun/core/assets_manager.dart';
 import 'package:islami_c14_offline_sun/core/colors_manager.dart';
-import 'package:islami_c14_offline_sun/models/Radios.dart';
+import 'package:islami_c14_offline_sun/data/models/Radios.dart';
 import 'package:islami_c14_offline_sun/provider/radio_view_model.dart';
 import 'package:provider/provider.dart';
 

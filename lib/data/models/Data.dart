@@ -1,4 +1,4 @@
-import 'package:islami_c14_offline_sun/models/timings.dart';
+import 'package:islami_c14_offline_sun/data/models/timings.dart';
 
 import 'Date.dart';
 import 'Meta.dart';
@@ -30,7 +30,6 @@ class Data {
     };
   }
 
-  /// نسخة نسخة محسنة للتصحيح / النسخ
   Data copyWith({
     Timings? timings,
     Date? date,

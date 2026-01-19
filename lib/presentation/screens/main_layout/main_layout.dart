@@ -43,11 +43,6 @@ class _MainLayoutState extends State<MainLayout> {
             child: ImageIcon(AssetImage(iconPath)))
         : ImageIcon(AssetImage(iconPath));
   }
-
-  Widget buildUnSelectedIcon(String iconPath) {
-    return ImageIcon(AssetImage(iconPath));
-  }
-
   Widget buildBottomNavBar() {
     return BottomNavigationBar(
         currentIndex: selectedIndex,
@@ -58,7 +53,7 @@ class _MainLayoutState extends State<MainLayout> {
         items: [
           BottomNavigationBarItem(
               icon: buildIcon(AssetsManager.quranIcon, selectedIndex == 0),
-              label: "Quran"),
+              label: "Quran",),
           BottomNavigationBarItem(
               icon: buildIcon(AssetsManager.hadithIcon, selectedIndex == 1),
               label: "Hadith"),

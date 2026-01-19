@@ -1,19 +1,27 @@
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:islami_c14_offline_sun/data/api_service.dart';
-import 'package:islami_c14_offline_sun/models/Radios.dart';
-import 'package:islami_c14_offline_sun/models/Reciters.dart';
+import 'package:injectable/injectable.dart';
+import 'package:islami_c14_offline_sun/data/models/Radios.dart';
+import 'package:islami_c14_offline_sun/data/models/Reciters.dart';
+import 'package:islami_c14_offline_sun/domain/use_case/use_case.dart';
+import 'package:islami_c14_offline_sun/provider/states.dart';
 
+@injectable
 class RadioViewModel extends ChangeNotifier{
-  RadioViewModel(){
+  @factoryMethod
+  RadioViewModel(this._useCase){
     getReciters();
     getRadio();
   }
-  List<Radios> radiosList =[];
+  UseCase _useCase;
+  List<Radios>? radiosList =[];
   bool isRadioSelected=true;
-  bool isLoading =false;
-  String? errorMessage;
+  RadiosState state=RadioLoadingState();
+
+  emitRadio(RadiosState newState){
+    state=newState;
+  }
 
   changeRadio(bool isRadio){
     if(isRadio==isRadioSelected)return;
@@ -21,21 +29,18 @@ class RadioViewModel extends ChangeNotifier{
     notifyListeners();
 }
  Future<void> getRadio()async {
-    isLoading =true;
-    errorMessage =null;
-    notifyListeners();
+    emitRadio(RadioLoadingState());
+   var  result = await _useCase.invokeGetRadio();
 
+   result.fold((l) {
+     emitRadio(RadioErrorState(message: l.message));
+      
+   }, (r) {
+     radiosList=r.radios;
+     emitRadio(RadioSuccessState(radio: r));
 
- try{
+   },);
 
-   var  result = await ApiService.getRadioResponse();
-    radiosList =result.radios!;
-    isLoading =false;
-    errorMessage =null;
- }catch(e){
-isLoading=false;
-errorMessage=e.toString();
- }
     notifyListeners();
 
  }
@@ -72,20 +77,21 @@ errorMessage=e.toString();
   }
   bool isRecitersLoading =false;
   String? recitersErrorMessage;
-  List<Reciters> recitersList =[];
+  List<Reciters>? recitersList =[];
   Future<void> getReciters()async{
-    isRecitersLoading =true;
-    recitersErrorMessage=null;
-    try{
-   var response= await ApiService.getRecentsResponse();
-     recitersList= response.reciters!;
-     isRecitersLoading=false;
-     recitersErrorMessage=null;
-    }catch(e){
-      errorMessage=e.toString();
-    }
+    emitRadio(RecantsLoadingState());
+  var result =await  _useCase.invokeGetRecants();
+  result.fold((l) {
+    emitRadio(RecantsErrorState(message: l.message));
+  }, (r) {
+    recitersList =r.reciters;
+    emitRadio(RecantsSuccessState(recants: r));
+  },);
+
+
 notifyListeners();
   }
 
 
 }
+

@@ -1,6 +1,6 @@
 
 
-import 'package:islami_c14_offline_sun/models/moshaf.dart';
+import 'package:islami_c14_offline_sun/data/models/moshaf.dart';
 
 /// id : 1
 /// name : "إبراهيم الأخضر"

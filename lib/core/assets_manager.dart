@@ -12,10 +12,8 @@ class AssetsManager {
   static const String searchIcon = "$base/search_icon.png";
   static const String mostRecentSuraImage = "$base/most_recent_sura_image.png";
   static const String suraNumberBackgroundImage = "$base/sura_number_image.png";
-  static const String quranDetailsPatternLeft =
-      "$base/quran_details_pattern.png";
-  static const String quranDetailsPatternRight =
-      "$base/quran_details_pattern_right.png";
+  static const String quranDetailsPatternLeft = "$base/quran_details_pattern.png";
+  static const String quranDetailsPatternRight = "$base/quran_details_pattern_right.png";
   static const String quranDetailsImage = "$base/quran_details_image.png";
   static const String hadithTabBackground = "$base/hadith_tab_background.png";
   static const String hadithCardBackground = "$base/hadith_card_background.png";
