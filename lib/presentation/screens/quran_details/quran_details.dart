@@ -4,6 +4,8 @@ import 'package:islami_c14_offline_sun/core/assets_manager.dart';
 import 'package:islami_c14_offline_sun/core/colors_manager.dart';
 import 'package:islami_c14_offline_sun/presentation/screens/main_layout/tabs/quran/widgets/sura_widget.dart';
 import 'package:islami_c14_offline_sun/presentation/screens/quran_details/widgets/sura_content.dart';
+import 'package:islami_c14_offline_sun/provider/islami_view_model.dart';
+import 'package:provider/provider.dart';
 
 class QuranDetails extends StatefulWidget {
   const QuranDetails({super.key});
@@ -22,9 +24,18 @@ class _QuranDetailsState extends State<QuranDetails> {
     super.didChangeDependencies();
     arguments =
         ModalRoute.of(context)!.settings.arguments as SuraDetailsArguments;
-    loadSuraContent(arguments.suraIndex);
+    loadSuraContent();
   }
 
+  loadSuraContent()async{
+    var provider =Provider.of<IslamiViewModel>(context,listen: false);
+    await provider.loadSuraContent(arguments.suraIndex);
+setState(() {
+  suraContent =provider.suraContent??'';
+
+});
+
+  }
   @override
   void dispose() {
     // TODO: implement dispose
@@ -74,27 +85,11 @@ class _QuranDetailsState extends State<QuranDetails> {
                 ? Expanded(child: Center(child: CircularProgressIndicator()))
                 : SuraContent(suraContent: suraContent),
             Image.asset(AssetsManager.quranDetailsImage)
-
-            /// taped sura content
           ],
         ),
       ),
     );
   }
 
-  void loadSuraContent(String suraIndex) async {
-    String fileContent = await rootBundle
-        .loadString("assets/files/suras/$suraIndex.txt"); // /blocking
-    var suraLines = fileContent.trim().split("\n");
-    List<String> suraLinesFinal = [];
-    for (int i = 0; i < suraLines.length; i++) {
-      String line = suraLines[i];
-      line += "[${i + 1}]";
-      suraLinesFinal.add(line);
-    }
-    await Future.delayed(Duration(milliseconds: 500));
-    setState(() {
-      suraContent = suraLinesFinal.join();
-    });
-  }
+
 }

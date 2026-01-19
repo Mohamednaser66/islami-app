@@ -4,6 +4,8 @@ import 'package:islami_c14_offline_sun/core/colors_manager.dart';
 import 'package:islami_c14_offline_sun/core/constant.dart';
 import 'package:islami_c14_offline_sun/presentation/screens/main_layout/tabs/quran/widgets/most_recent_suras.dart';
 import 'package:islami_c14_offline_sun/presentation/screens/main_layout/tabs/quran/widgets/sura_widget.dart';
+import 'package:islami_c14_offline_sun/provider/islami_view_model.dart';
+import 'package:provider/provider.dart';
 
 class Quran extends StatefulWidget {
   const Quran({super.key});
@@ -17,6 +19,13 @@ class _QuranState extends State<Quran> {
   List<SuraDM> filteredList = [];
   GlobalKey<MostRecentSurasState> mostRecentSurasKey =
       GlobalKey<MostRecentSurasState>();
+  late IslamiViewModel provider;
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+     provider =Provider.of(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,20 +59,11 @@ class _QuranState extends State<Quran> {
       ),
     );
   }
-
-  void getFilteredList() {
-    filteredList = ConstantManager.suraList
-        .where((suraDM) =>
-            suraDM.suraNameEn.toLowerCase().contains(searchKey.toLowerCase()) ||
-            suraDM.suraNameAr.contains(searchKey))
-        .toList();
-  }
-
   Widget buildSurasList() {
     if (searchKey.isEmpty) {
       filteredList = ConstantManager.suraList;
     } else {
-      getFilteredList();
+
     }
 
     return ListView.separated(
@@ -89,8 +89,9 @@ class _QuranState extends State<Quran> {
       child: TextField(
         onChanged: (value) {
           searchKey = value;
-          print(searchKey);
-          setState(() {});
+          provider.getFilteredList(searchKey);
+            filteredList =provider.filteredList;
+
         },
         cursorColor: ColorsManager.ofWhite,
         style: const TextStyle(
