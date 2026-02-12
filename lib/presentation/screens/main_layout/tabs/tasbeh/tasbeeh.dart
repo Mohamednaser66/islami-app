@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_c14_offline_sun/core/assets_manager.dart';
 import 'package:islami_c14_offline_sun/core/colors_manager.dart';
+import 'package:islami_c14_offline_sun/core/constant.dart';
 
 class Tasbeh extends StatefulWidget {
   const Tasbeh({super.key});
@@ -13,7 +14,7 @@ class Tasbeh extends StatefulWidget {
 class _TasbehState extends State<Tasbeh> {
   double angel =0;
   int counter=0;
-  List<String> azkar = ['سبحان الله','الحمد الله','الله اكبر'];
+  List<String> azkar = ConstantManager.azkar;
   int currentIndex=0;
   @override
   Widget build(BuildContext context) {

@@ -7,6 +7,9 @@ class IslamiViewModel extends ChangeNotifier{
  late HadithDM hadith;
  String? suraContent;
  List<SuraDM> filteredList=[];
+
+
+
  Future<void>  loadHadithFile(int index) async {
     String key = "assets/files/hadith/h${index}.txt";
     var fileContent = await rootBundle.loadString(key);
@@ -38,5 +41,14 @@ class IslamiViewModel extends ChangeNotifier{
        suraDM.suraNameAr.contains(searchKey))
        .toList();
    notifyListeners();
+ }
+ void onSebhaClicked(int currentIndex,int counter, double angel ) {
+   angel-=15;
+   counter++;
+   if(counter==33){
+     counter=0;
+     currentIndex++;
+   }
+ notifyListeners();
  }
 }

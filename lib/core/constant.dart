@@ -3,7 +3,6 @@ class SuraDM {
   String suraNameAr;
   String versesNumber;
   String suraIndex;
-
   SuraDM(
       {required this.suraNameEn,
       required this.suraNameAr,
@@ -11,7 +10,10 @@ class SuraDM {
       required this.suraIndex});
 }
 
+
 class ConstantManager {
+ static  List<String> azkar = ['سبحان الله','الحمد الله','الله اكبر'];
+
   /// FireStore
   static List<SuraDM> suraList = [
     SuraDM(

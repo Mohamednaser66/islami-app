@@ -40,7 +40,6 @@ setState(() {
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    print("Ana da5alt el dispose");
     arguments.mostRecentSurasKey?.currentState?.getMostRecentSuras();
   }
 
