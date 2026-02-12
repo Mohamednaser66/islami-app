@@ -4,6 +4,8 @@ import 'package:islami_c14_offline_sun/provider/radio_view_model.dart';
 import 'package:islami_c14_offline_sun/provider/states.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../../../core/colors_manager.dart';
+
 class RadioListview extends StatelessWidget {
   const RadioListview({super.key});
 
@@ -12,7 +14,7 @@ class RadioListview extends StatelessWidget {
     return Consumer<RadioViewModel>(builder: (context, provider, child) {
    var state = provider.state;
       if(state is RadioLoadingState){
-        return const Center(child: CircularProgressIndicator(),);
+        return  Center(child: CircularProgressIndicator(color: ColorsManager.white,),);
       }
       if(state is RadioErrorState){
         return Center(child: Text(state.message??"Failed Loading"));

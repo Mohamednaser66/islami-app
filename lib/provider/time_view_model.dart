@@ -22,8 +22,8 @@ TimeViewModel(this._useCase);
  var result =await _useCase.invokeGetTime();
  result.fold((l) {
    emit(PrayTimeErrorState(message: l.message));
- }, (r) {
-   responseData =r;
+ }, (r)async {
+   responseData = r;
    emit(PrayTimeSuccessState(prayTime: r));
  },);
 

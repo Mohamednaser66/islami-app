@@ -23,9 +23,15 @@ class PrayTimes extends StatelessWidget {
       child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: ChangeNotifierProvider(create:  (context) => getIt<TimeViewModel>(),
+          child: ChangeNotifierProvider(create:  (context) => getIt<TimeViewModel>()..getTimeResponse(),
             child: Consumer<TimeViewModel>(
               builder: (context,provider,child) {
+                if (provider.date == null) {
+                  return const Center(
+                    child: CircularProgressIndicator(color: ColorsManager.white,),
+                  );
+                }
+
                 return Column(
                   children: [
                     Image.asset(
