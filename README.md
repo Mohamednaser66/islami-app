@@ -23,12 +23,15 @@ Radio – Play Islamic radio audio.
 
  # Screenahots
 
- <img width="200" height="500" alt="Splash Screen" src="https://github.com/user-attachments/assets/3c5c46e0-0582-4d50-81f8-5be0d0a38139" />
-<img width="200" height="500" alt="Intro Screen" src="https://github.com/user-attachments/assets/3fc2e6bc-7445-49b6-87e1-28fe9f4cc840" />
-<img width="200" height="500" alt="Intro Screen (2)" src="https://github.com/user-attachments/assets/556a9c97-9f30-4ea0-bee6-454860a8688f" />
-<img width="200" height="500" alt="Home Screen (1)" src="https://github.com/user-attachments/assets/68476a6b-ac33-420d-8f19-f0822b612090" />
-<img width="200" height="500" alt="Soura Details Screen" src="https://github.com/user-attachments/assets/f6097915-d161-4bd6-affc-98a7da651b8c" />
-<img width="200" height="500" alt="Home Screen" src="https://github.com/user-attachments/assets/767e48f5-35e0-486c-abcd-a4a2f4152b49" />
+<img width="150" height="300" alt="Screenshot 2026-02-12 153458" src="https://github.com/user-attachments/assets/cd8e5cf8-e3c3-42de-b899-c8104a6cbde7" />
+<img width="150" height="300" alt="Screenshot 2026-02-12 153509" src="https://github.com/user-attachments/assets/df82d446-703b-4139-a6c5-c18f017b46d3" />
+<img width="150" height="300" alt="Screenshot 2026-02-12 153526" src="https://github.com/user-attachments/assets/cb4dd183-8e53-48ea-b675-46b1b14431d9" />
+<img width="150" height="300" alt="Screenshot 2026-02-12 153541" src="https://github.com/user-attachments/assets/f0501299-7b56-44bf-87c0-568a19d477c9" />
+<img width="150" height="300" alt="Screenshot 2026-02-12 153557" src="https://github.com/user-attachments/assets/ee349d58-da83-44e9-96be-425a14af2bb9" />
+<img width="150" height="300" alt="Screenshot 2026-02-12 160331" src="https://github.com/user-attachments/assets/a8431b22-7034-485c-9152-9eb42a24c4e1" />
+<img width="150" height="300" alt="Screenshot 2026-02-12 160356" src="https://github.com/user-attachments/assets/a5c83c1b-e3e0-420b-8817-6d12eee1f141" />
+<img width="150" height="300" alt="Screenshot 2026-02-12 160421" src="https://github.com/user-attachments/assets/0bc55905-3827-4fea-85ac-7e82b5d0713e" />
+
 
 ## Getting Started
 
