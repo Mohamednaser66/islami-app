@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:islami_c14_offline_sun/data/api_service.dart';
 import 'package:islami_c14_offline_sun/data/models/Pray_time_response.dart';
 import 'package:islami_c14_offline_sun/domain/use_case/use_case.dart';
 import 'package:islami_c14_offline_sun/provider/states.dart';
